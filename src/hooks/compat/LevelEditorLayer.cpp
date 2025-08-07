@@ -1,5 +1,6 @@
 #include "LevelEditorLayer.hpp"
 #include "../../utils.hpp"
+#include <Geode/ui/Notification.hpp>
 
 bool HookedLevelEditorLayer::init(GJGameLevel* level, bool p1) {
     if (!LevelEditorLayer::init(level, p1)) return false;

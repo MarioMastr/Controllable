@@ -1,6 +1,7 @@
 #include "../include/Controllable.hpp"
 #include "ControllableManager.hpp"
 #include "utils.hpp"
+#include <Geode/Geode.hpp>
 
 using namespace controllable::events;
 

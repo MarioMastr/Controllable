@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cocos2d.h>
+
 enum class Direction {
     None = 0,
     Up, Down, Left, Right,
