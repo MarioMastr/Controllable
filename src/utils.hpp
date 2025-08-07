@@ -29,7 +29,7 @@ bool isNodeClipped(cocos2d::CCNode* node);
 template <class T>
 T findParentOfType(cocos2d::CCNode* node);
 
-geode::Result<std::string> getSpriteNodeFrameName(cocos2d::CCSprite* sprite);
+geode::Result<std::string, std::string> getSpriteNodeFrameName(cocos2d::CCSprite* sprite);
 
 cocos2d::CCNode* findNavArrow(NavigationArrowType type);
 

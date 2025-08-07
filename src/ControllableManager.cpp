@@ -129,7 +129,7 @@ void cl::Manager::update(float dt) {
     g_controller.update(dt);
     m_settingsChangedThisFrame = false;
 
-#ifndef GEODE_IS_MOBILE
+#ifdef GEODE_IS_WINDOWS
     auto application = cocos2d::CCApplication::get();
     application->m_pControllerHandler->m_controllerConnected = g_controller.m_connected;
     application->m_pController2Handler->m_controllerConnected = false;
@@ -141,7 +141,7 @@ void cl::Manager::update(float dt) {
         (g_ckTarget->*g_ckCallback)(dt);
     }
 
-#ifndef GEODE_IS_MOBILE
+#ifdef GEODE_IS_WINDOWS
     // tell gd no controller connected to prevent ui showing up
     if (m_otherRemoveGDIcons) {
         application->m_pControllerHandler->m_controllerConnected = false;

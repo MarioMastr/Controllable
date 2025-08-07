@@ -594,7 +594,7 @@ T cl::utils::findParentOfType(cocos2d::CCNode* node) {
     else return cl::utils::findParentOfType<T>(node->getParent());
 }
 
-geode::Result<std::string> cl::utils::getSpriteNodeFrameName(cocos2d::CCSprite* sprite) {
+geode::Result<std::string, std::string> cl::utils::getSpriteNodeFrameName(cocos2d::CCSprite* sprite) {
     std::string frameName = "";
     bool found = false;
     // taken from devtools

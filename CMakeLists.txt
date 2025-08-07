@@ -55,4 +55,8 @@ target_link_libraries(${PROJECT_NAME} gd-render-texture)
 CPMAddPackage("gh:undefined06855/node-identification#30944b4")
 target_link_libraries(${PROJECT_NAME} node-identification)
 
+if (APPLE)
+    target_link_libraries(${PROJECT_NAME} "-framework GameController")
+endif()
+
 setup_geode_mod(${PROJECT_NAME})
