@@ -18,11 +18,10 @@ if (WIN32)
     file(GLOB_RECURSE WIN_SOURCES src/platform/windows/*.cpp)
     list(APPEND SOURCES ${WIN_SOURCES})
 elseif (APPLE)
-    file(GLOB_RECURSE MAC_SOURCES 
-        src/platform/macos/*.cpp
-        src/platform/macos/*.mm
-    )
-    list(APPEND SOURCES ${MAC_SOURCES})
+    file(GLOB_RECURSE MAC_CXX_SOURCES src/platform/macos/*.cpp)
+    file(GLOB_RECURSE MAC_OBJCXX_SOURCES src/platform/macos/*.mm)
+    list(APPEND SOURCES ${MAC_CXX_SOURCES} ${MAC_OBJCXX_SOURCES})
+    set_source_files_properties(${MAC_CXX_SOURCES} PROPERTIES SKIP_PRECOMPILE_HEADERS ON)
 elseif (ANDROID)
     file(GLOB_RECURSE ANDROID_SOURCES src/platform/android/*.cpp)
     list(APPEND SOURCES ${ANDROID_SOURCES})
